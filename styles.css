@@ -1401,26 +1401,28 @@ img {
     transition: var(--transition-smooth);
 }
 
-.feature-card:hover::after,
-.product-card:hover::after,
-.review-card:hover::after {
-    border-color: rgba(0, 0, 0, 0.05);
-    background-image: 
-        linear-gradient(to bottom, var(--color-cyan) 12px, transparent 12px),
-        linear-gradient(to right, var(--color-cyan) 12px, transparent 12px),
-        linear-gradient(to bottom, var(--color-magenta) 12px, transparent 12px),
-        linear-gradient(to left, var(--color-magenta) 12px, transparent 12px),
-        linear-gradient(to top, var(--color-yellow) 12px, transparent 12px),
-        linear-gradient(to right, var(--color-yellow) 12px, transparent 12px),
-        linear-gradient(to top, var(--color-primary) 12px, transparent 12px),
-        linear-gradient(to left, var(--color-primary) 12px, transparent 12px);
-    background-position: 
-        top left, top left,
-        top right, top right,
-        bottom left, bottom left,
-        bottom right, bottom right;
-    background-repeat: no-repeat;
-    background-size: 1px 12px, 12px 1px, 1px 12px, 12px 1px, 1px 12px, 12px 1px, 1px 12px, 12px 1px;
+@media (hover: hover) {
+    .feature-card:hover::after,
+    .product-card:hover::after,
+    .review-card:hover::after {
+        border-color: rgba(0, 0, 0, 0.05);
+        background-image: 
+            linear-gradient(to bottom, var(--color-cyan) 12px, transparent 12px),
+            linear-gradient(to right, var(--color-cyan) 12px, transparent 12px),
+            linear-gradient(to bottom, var(--color-magenta) 12px, transparent 12px),
+            linear-gradient(to left, var(--color-magenta) 12px, transparent 12px),
+            linear-gradient(to top, var(--color-yellow) 12px, transparent 12px),
+            linear-gradient(to right, var(--color-yellow) 12px, transparent 12px),
+            linear-gradient(to top, var(--color-primary) 12px, transparent 12px),
+            linear-gradient(to left, var(--color-primary) 12px, transparent 12px);
+        background-position: 
+            top left, top left,
+            top right, top right,
+            bottom left, bottom left,
+            bottom right, bottom right;
+        background-repeat: no-repeat;
+        background-size: 1px 12px, 12px 1px, 1px 12px, 12px 1px, 1px 12px, 12px 1px, 1px 12px, 12px 1px;
+    }
 }
 
 .deco-circle {
@@ -1902,6 +1904,23 @@ img {
 }
 
 @media (max-width: 768px) {
+    /* Performance Optimizations: Hide large blurred circles & drop particles on mobile */
+    .deco-circle,
+    .drip-container,
+    .deco-target,
+    .deco-square-outline,
+    .deco-floating-bar-cyan,
+    .deco-floating-bar-magenta {
+        display: none !important;
+    }
+    
+    .logo-brand {
+        font-size: 1.15rem;
+    }
+    .logo-sub {
+        font-size: 0.55rem;
+    }
+
     .main-header {
         height: 70px;
     }
@@ -1996,5 +2015,73 @@ img {
     }
     .btn-whatsapp-header {
         padding: 10px;
+    }
+    
+    /* Mobile Specific Layout for Interactive Mixer */
+    .interactive-mixer-card {
+        padding: 24px 16px;
+        max-width: 100%;
+    }
+    .ink-mixer-container {
+        width: 160px;
+        height: 160px;
+    }
+    .ink-blob {
+        width: 80px;
+        height: 80px;
+    }
+    .ink-mixer-container:hover .ink-blob,
+    .ink-mixer-container:active .ink-blob {
+        width: 100px;
+        height: 100px;
+    }
+    
+    /* Mix container touch positioning */
+    .ink-mixer-container:active .blob-cyan {
+        top: 30px;
+        left: 30px;
+    }
+    .ink-mixer-container:active .blob-magenta {
+        top: 30px;
+        right: 30px;
+    }
+    .ink-mixer-container:active .blob-yellow {
+        bottom: 30px;
+        left: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.9rem;
+    }
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+    .container {
+        padding: 0 16px;
+    }
+    .product-card,
+    .feature-card,
+    .review-card {
+        padding: 24px 20px;
+    }
+    .orcamento-form-wrapper {
+        padding: 20px 16px;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .section-padding {
+        padding: 45px 0;
+    }
+    .product-tabs {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+    .tab-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
