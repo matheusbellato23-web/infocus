@@ -403,11 +403,7 @@ img {
 }
 
 .hero-title .highlight {
-    background: linear-gradient(90deg, var(--color-cyan), var(--color-magenta), var(--color-yellow), var(--color-accent));
-    background-size: 300% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: textGradientShift 8s linear infinite;
+    color: var(--color-accent);
     font-weight: 800;
     position: relative;
 }
@@ -441,8 +437,7 @@ img {
 }
 
 .hero-visual {
-    position: relative;
-    height: 400px;
+    height: 460px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -483,22 +478,22 @@ img {
 }
 
 .card-1 {
-    top: 10%;
-    left: 10%;
-    z-index: 3;
+    top: 0;
+    left: 5%;
+    z-index: 2;
     border-top: 4px solid var(--color-primary);
 }
 
 .card-2 {
-    top: 40%;
+    top: 150px;
     right: 5%;
-    z-index: 2;
+    z-index: 3;
     border-top: 4px solid var(--color-accent);
 }
 
 .card-3 {
-    bottom: 5%;
-    left: 20%;
+    top: 300px;
+    left: 15%;
     z-index: 4;
     border-top: 4px solid #25d366;
 }
@@ -1477,7 +1472,6 @@ img {
     background-color: var(--color-cyan);
     top: 5%;
     left: -50px;
-    animation: floatSlow 8s ease-in-out infinite alternate;
 }
 
 .circle-magenta {
@@ -1486,7 +1480,6 @@ img {
     background-color: var(--color-magenta);
     bottom: 10%;
     right: -100px;
-    animation: floatSlow 12s ease-in-out infinite alternate-reverse;
 }
 
 .circle-yellow {
@@ -1495,7 +1488,6 @@ img {
     background-color: var(--color-yellow);
     top: 35%;
     left: 45%;
-    animation: floatSlow 10s ease-in-out infinite alternate;
 }
 
 .circle-cyan-light {
@@ -1911,7 +1903,23 @@ img {
         justify-content: center;
     }
     .hero-visual {
-        display: none; /* Hide visual stack on smaller screens to avoid overlap */
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-top: 40px;
+    }
+    .visual-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        height: auto;
+    }
+    .visual-card {
+        position: static;
+        width: 100%;
+        max-width: 320px;
+        box-sizing: border-box;
     }
     
     .orcamento-container {
