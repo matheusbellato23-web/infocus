@@ -437,7 +437,6 @@ img {
 }
 
 .hero-visual {
-    height: 380px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -446,8 +445,10 @@ img {
 .visual-stack {
     position: relative;
     width: 100%;
-    height: 100%;
-    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
 }
 
 .visual-stack::before {
@@ -464,14 +465,15 @@ img {
 }
 
 .visual-card {
-    position: absolute;
-    width: 230px;
+    position: relative;
+    width: 280px;
     background-color: var(--color-bg-white);
     border-radius: var(--radius-md);
     padding: 20px;
     box-shadow: var(--shadow-lg);
     border: 1px solid rgba(20, 70, 140, 0.08);
     transition: var(--transition-smooth);
+    z-index: 1;
 }
 
 .visual-icon {
@@ -492,30 +494,24 @@ img {
 }
 
 .card-1 {
-    top: 10px;
-    left: 10px;
-    z-index: 1;
+    align-self: flex-start;
     border-top: 4px solid var(--color-primary);
 }
 
 .card-2 {
-    top: 105px;
-    left: 70px;
-    z-index: 2;
+    align-self: center;
     border-top: 4px solid var(--color-accent);
 }
 
 .card-3 {
-    top: 200px;
-    left: 130px;
-    z-index: 3;
+    align-self: flex-end;
     border-top: 4px solid #25d366;
 }
 
 .visual-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-5px) scale(1.02);
     box-shadow: 0 15px 35px rgba(20, 70, 140, 0.15);
-    z-index: 5;
+    z-index: 2;
 }
 
 /* ==========================================================================
@@ -1930,6 +1926,9 @@ img {
         width: 100%;
         max-width: 320px;
         box-sizing: border-box;
+    }
+    .card-1, .card-2, .card-3 {
+        align-self: center;
     }
     
     .orcamento-container {
