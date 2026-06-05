@@ -437,7 +437,7 @@ img {
 }
 
 .hero-visual {
-    height: 460px;
+    height: 380px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -447,14 +447,28 @@ img {
     position: relative;
     width: 100%;
     height: 100%;
+    max-width: 380px;
+}
+
+.visual-stack::before {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background: radial-gradient(circle, rgba(20, 70, 140, 0.08) 0%, rgba(245, 130, 32, 0.05) 50%, transparent 100%);
+    filter: blur(40px);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .visual-card {
     position: absolute;
-    width: 250px;
+    width: 230px;
     background-color: var(--color-bg-white);
     border-radius: var(--radius-md);
-    padding: 24px;
+    padding: 20px;
     box-shadow: var(--shadow-lg);
     border: 1px solid rgba(20, 70, 140, 0.08);
     transition: var(--transition-smooth);
@@ -478,23 +492,23 @@ img {
 }
 
 .card-1 {
-    top: 0;
-    left: 5%;
-    z-index: 2;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
     border-top: 4px solid var(--color-primary);
 }
 
 .card-2 {
-    top: 150px;
-    right: 5%;
-    z-index: 3;
+    top: 105px;
+    left: 70px;
+    z-index: 2;
     border-top: 4px solid var(--color-accent);
 }
 
 .card-3 {
-    top: 300px;
-    left: 15%;
-    z-index: 4;
+    top: 200px;
+    left: 130px;
+    z-index: 3;
     border-top: 4px solid #25d366;
 }
 
