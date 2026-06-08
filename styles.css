@@ -1020,6 +1020,34 @@ img {
     text-align: center;
 }
 
+/* Dynamic Form Fields */
+.dynamic-fields-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dynamic-fields-container.show {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .dynamic-fields-container {
+        grid-template-columns: 1fr;
+        max-height: none; /* Let height flow naturally when open in mobile */
+    }
+    .dynamic-fields-container.show {
+        max-height: 500px; /* Larger max-height for mobile vertical stacking */
+    }
+}
+
 /* ==========================================================================
    Section: Sobre Nós
    ========================================================================== */
