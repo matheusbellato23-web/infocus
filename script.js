@@ -124,10 +124,15 @@ document.addEventListener('DOMContentLoaded', () => {
             // Scroll smoothly to budget form section
             budgetSection.scrollIntoView({ behavior: 'smooth' });
             
-            // Focus on quantity input
+            // Focus on quantity or details input depending on product
             setTimeout(() => {
-                const qtyInput = document.getElementById('form-quantity');
-                if (qtyInput) qtyInput.focus();
+                if (productName === 'Orçamento Especial') {
+                    const detailsTextarea = document.getElementById('form-details');
+                    if (detailsTextarea) detailsTextarea.focus();
+                } else {
+                    const qtyInput = document.getElementById('form-quantity');
+                    if (qtyInput) qtyInput.focus();
+                }
             }, 800);
         });
     });

@@ -625,36 +625,148 @@ img {
 .product-tabs {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 12px;
     margin-bottom: 50px;
+    background: rgba(20, 70, 140, 0.03);
+    padding: 8px;
+    border-radius: var(--radius-full);
+    max-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(20, 70, 140, 0.05);
 }
 
 .tab-btn {
-    background-color: var(--color-bg-light);
-    border: 1px solid var(--color-border);
+    background-color: transparent;
+    border: none;
     color: var(--color-text-muted);
-    padding: 12px 24px;
+    padding: 12px 28px;
     border-radius: var(--radius-full);
     font-family: 'Outfit', sans-serif;
-    font-weight: 600;
-    font-size: 0.95rem;
+    font-weight: 700;
+    font-size: 1.05rem;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     transition: var(--transition-smooth);
 }
 
 .tab-btn:hover {
-    background-color: var(--color-primary-light);
+    background-color: rgba(20, 70, 140, 0.06);
     color: var(--color-primary);
 }
 
 .tab-btn.active {
     background-color: var(--color-primary);
     color: var(--color-text-light);
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 8px 20px rgba(20, 70, 140, 0.2);
+}
+
+/* Badges for Best Sellers and Seasonal promotions */
+.product-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 6px 14px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    border-radius: var(--radius-full);
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    font-family: 'Outfit', sans-serif;
+    animation: badgeFloat 3s infinite ease-in-out;
+}
+
+@keyframes badgeFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+}
+
+.badge-best-seller {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #d4630a 100%);
+    color: var(--color-text-light);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.badge-seasonal {
+    background: linear-gradient(135deg, #e62241 0%, #b31027 100%);
+    color: var(--color-text-light);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.badge-special {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0d2e5c 100%);
+    color: var(--color-text-light);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Highlighted Best Sellers & Seasonal products */
+.product-card.highlighted {
+    border-color: rgba(245, 130, 32, 0.25);
+    box-shadow: 0 8px 20px rgba(245, 130, 32, 0.05);
+}
+
+.product-card.highlighted::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-md);
+    border: 1.5px solid transparent;
+    transition: var(--transition-smooth);
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.product-card.highlighted:hover::after {
+    border-color: var(--color-accent);
+}
+
+/* Special Quote Cards - Outros Serviços */
+.special-quote-card {
+    border: 2px dashed rgba(20, 70, 140, 0.25) !important;
+    background: linear-gradient(135deg, rgba(20, 70, 140, 0.01) 0%, rgba(245, 130, 32, 0.02) 100%);
+}
+
+.special-quote-card:hover {
+    border-color: var(--color-accent) !important;
+    background: linear-gradient(135deg, rgba(20, 70, 140, 0.02) 0%, rgba(245, 130, 32, 0.04) 100%) !important;
+}
+
+.special-preview {
+    background-color: rgba(20, 70, 140, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.special-icon-container {
+    font-size: 3.2rem;
+    color: var(--color-primary);
+    animation: pulseSlow 3s infinite ease-in-out;
+}
+
+@keyframes pulseSlow {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.08); opacity: 1; color: var(--color-accent); }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+.btn-special {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #e07216 100%) !important;
+    border-color: var(--color-accent) !important;
+    color: var(--color-text-light) !important;
+}
+
+.btn-special:hover {
+    background: linear-gradient(135deg, #e07216 0%, #c55f0b 100%) !important;
+    box-shadow: 0 5px 15px rgba(245, 130, 32, 0.3) !important;
 }
 
 .tab-content {
