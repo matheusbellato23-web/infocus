@@ -134,7 +134,10 @@
             <!-- Category Tabs -->
             <div class="product-tabs" role="tablist">
                 <button class="tab-btn active" data-tab="papelaria" role="tab" aria-selected="true" id="tab-papelaria">
-                    <i class="fa-solid fa-paperclip"></i> Papelaria Corporativa
+                    <i class="fa-solid fa-paperclip"></i> Papelaria
+                </button>
+                <button class="tab-btn" data-tab="servicos" role="tab" aria-selected="false" id="tab-servicos">
+                    <i class="fa-solid fa-print"></i> Serviços de Papelaria
                 </button>
                 <button class="tab-btn" data-tab="comunicacao" role="tab" aria-selected="false" id="tab-comunicacao">
                     <i class="fa-solid fa-image"></i> Comunicação Visual
@@ -189,19 +192,12 @@
                         <p>Para pedidos, recibos ou anotações rápidas. Com ou sem canhoto destacável, numerados e personalizados.</p>
                         <button class="btn btn-card-request" data-product="Blocos e Talões">Solicitar Orçamento</button>
                     </div>
-                    <!-- Apostilas -->
+                    <!-- Crachás e Cordões -->
                     <div class="product-card">
-                        <div class="product-card-preview"><img src="img/produtos/apostila.png" alt="Apostilas" class="product-card-image"></div>
-                        <h3>Apostilas</h3>
-                        <p>Material didático, manuais ou apresentações corporativas de alta qualidade. Impressão nítida com excelente acabamento.</p>
-                        <button class="btn btn-card-request" data-product="Apostilas">Solicitar Orçamento</button>
-                    </div>
-                    <!-- Encadernação Espiral -->
-                    <div class="product-card">
-                        <div class="product-card-preview"><img src="img/produtos/encadernacao.png" alt="Encadernação Espiral" class="product-card-image"></div>
-                        <h3>Encadernação Espiral</h3>
-                        <p>Organize e proteja seus documentos. Acabamento durável com capa plástica transparente/preta e espiral resistente.</p>
-                        <button class="btn btn-card-request" data-product="Encadernação Espiral">Solicitar Orçamento</button>
+                        <div class="product-card-preview"><img src="img/produtos/cracha.png" alt="Crachás e Cordões" class="product-card-image"></div>
+                        <h3>Crachás e Cordões</h3>
+                        <p>Identificação profissional com crachás em PVC rígido e cordões personalizados para empresas, eventos e feiras.</p>
+                        <button class="btn btn-card-request" data-product="Crachá e Cordão">Solicitar Orçamento</button>
                     </div>
                     <!-- Orçamento Especial -->
                     <div class="product-card special-quote-card">
@@ -212,6 +208,58 @@
                         </div>
                         <h3>Não achou o que procura?</h3>
                         <p>Criamos projetos gráficos especiais, facas personalizadas, papéis nobres ou acabamentos sob demanda.</p>
+                        <button class="btn btn-card-request btn-special" data-product="Orçamento Especial">Solicitar Orçamento Especial</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Tab Content -->
+            <div class="tab-content" id="content-servicos">
+                <div class="products-grid">
+                    <!-- Impressão Colorida e P&B -->
+                    <div class="product-card">
+                        <div class="product-card-preview"><img src="img/produtos/impressao.png" alt="Impressão Colorida e P&B" class="product-card-image"></div>
+                        <h3>Impressão Colorida e P&B</h3>
+                        <p>Impressão rápida de documentos, relatórios, apostilas e arquivos em diversos papéis e formatos com nitidez profissional.</p>
+                        <button class="btn btn-card-request" data-product="Impressões Coloridas e P&B">Solicitar Orçamento</button>
+                    </div>
+                    <!-- Cópias Coloridas -->
+                    <div class="product-card">
+                        <div class="product-card-preview"><img src="img/produtos/copia.png" alt="Cópias Coloridas e P&B" class="product-card-image"></div>
+                        <h3>Cópias Coloridas e P&B</h3>
+                        <p>Xerox e reprodução de documentos com alta fidelidade de cores e excelente definição de textos e imagens.</p>
+                        <button class="btn btn-card-request" data-product="Cópias Coloridas">Solicitar Orçamento</button>
+                    </div>
+                    <!-- Apostilas -->
+                    <div class="product-card">
+                        <div class="product-card-preview"><img src="img/produtos/apostila.png" alt="Apostilas" class="product-card-image"></div>
+                        <h3>Apostilas</h3>
+                        <p>Material didático, manuais ou apresentações de alta qualidade. Impressão nítida com excelente acabamento.</p>
+                        <button class="btn btn-card-request" data-product="Apostilas">Solicitar Orçamento</button>
+                    </div>
+                    <!-- Encadernação -->
+                    <div class="product-card">
+                        <div class="product-card-preview"><img src="img/produtos/encadernacao.png" alt="Encadernação" class="product-card-image"></div>
+                        <h3>Encadernação</h3>
+                        <p>Organize e proteja seus documentos. Acabamento durável com capa plástica transparente/preta e espiral resistente.</p>
+                        <button class="btn btn-card-request" data-product="Encadernação Espiral">Solicitar Orçamento</button>
+                    </div>
+                    <!-- Material Escolar -->
+                    <div class="product-card">
+                        <div class="product-card-preview"><img src="img/produtos/material_escolar.png" alt="Material Escolar" class="product-card-image"></div>
+                        <h3>Material Escolar</h3>
+                        <p>Itens essenciais para o dia a dia nos estudos: cadernos, canetas, lápis, borrachas, réguas e muito mais.</p>
+                        <button class="btn btn-card-request" data-product="Material Escolar">Solicitar Orçamento</button>
+                    </div>
+                    <!-- Orçamento Especial -->
+                    <div class="product-card special-quote-card">
+                        <div class="product-card-preview special-preview">
+                            <div class="special-icon-container">
+                                <i class="fa-solid fa-print"></i>
+                            </div>
+                        </div>
+                        <h3>Outros Serviços de Papelaria?</h3>
+                        <p>Precisa de digitalizações, plastificações ou outros serviços de balcão sob demanda? Solicite agora.</p>
                         <button class="btn btn-card-request btn-special" data-product="Orçamento Especial">Solicitar Orçamento Especial</button>
                     </div>
                 </div>
@@ -325,6 +373,13 @@
                         <h3>Ímãs de Geladeira</h3>
                         <p>Com manta magnética total e calendário. A melhor propaganda para disk gás, água, pizzarias e serviços locais.</p>
                         <button class="btn btn-card-request" data-product="Imãs de geladeira">Solicitar Orçamento</button>
+                    </div>
+                    <!-- Azulejos Personalizados -->
+                    <div class="product-card">
+                        <div class="product-card-preview"><img src="img/produtos/azulejo.png" alt="Azulejos Personalizados" class="product-card-image"></div>
+                        <h3>Azulejos Personalizados</h3>
+                        <p>Presente ou decoração única. Azulejos de cerâmica personalizados com fotos, frases ou marcas com alto brilho.</p>
+                        <button class="btn btn-card-request" data-product="Azulejos personalizados">Solicitar Orçamento</button>
                     </div>
                     <!-- Orçamento Especial -->
                     <div class="product-card special-quote-card">
@@ -532,15 +587,21 @@
                             <label for="form-product">Produto Desejado *</label>
                             <select id="form-product" required>
                                 <option value="" disabled selected>Selecione um produto...</option>
-                                <optgroup label="Papelaria Corporativa">
+                                <optgroup label="Papelaria">
                                     <option value="Cartão de Visita">Cartão de Visita</option>
                                     <option value="Postal">Postal</option>
                                     <option value="Folhetos">Folhetos / Panfletos</option>
                                     <option value="Folders">Folders</option>
                                     <option value="Receituário">Receituário</option>
                                     <option value="Blocos e Talões">Blocos e Talões</option>
+                                    <option value="Crachá e Cordão">Crachá e Cordão</option>
+                                </optgroup>
+                                <optgroup label="Serviços de Papelaria">
+                                    <option value="Impressões Coloridas e P&B">Impressões Coloridas e P&B</option>
+                                    <option value="Cópias Coloridas">Cópias Coloridas</option>
                                     <option value="Apostilas">Apostilas</option>
                                     <option value="Encadernação Espiral">Encadernação Espiral</option>
+                                    <option value="Material Escolar">Material Escolar</option>
                                 </optgroup>
                                 <optgroup label="Comunicação Visual">
                                     <option value="Banner">Banner</option>
@@ -558,6 +619,7 @@
                                     <option value="Carimbos">Carimbos</option>
                                     <option value="Revistas">Revistas</option>
                                     <option value="Imãs de geladeira">Ímãs de geladeira</option>
+                                    <option value="Azulejos personalizados">Azulejos personalizados</option>
                                 </optgroup>
                                 <option value="Orçamento Especial">Outros / Projetos Especiais</option>
                             </select>
