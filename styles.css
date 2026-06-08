@@ -143,60 +143,55 @@ img {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 14px 28px;
+    padding: 14px 30px;
     font-family: 'Outfit', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.95rem;
     border-radius: var(--radius-full);
     border: 2px solid transparent;
     cursor: pointer;
     transition: var(--transition-smooth);
+    letter-spacing: 0.3px;
 }
 
 .btn.btn-primary {
-    background-color: var(--color-accent);
+    background: linear-gradient(135deg, var(--color-accent) 0%, #e07216 100%);
     color: var(--color-text-light);
-    box-shadow: var(--shadow-accent);
+    box-shadow: 0 5px 15px rgba(245, 130, 32, 0.25);
+    border: none;
 }
 
 .btn-primary:hover {
-    background-color: var(--color-accent-hover);
-    box-shadow: 
-        -3px -3px 0px rgba(0, 174, 239, 0.6),
-        3px -3px 0px rgba(236, 0, 140, 0.6),
-        3px 3px 0px rgba(255, 242, 0, 0.6),
-        -3px 3px 0px rgba(20, 70, 140, 0.6);
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #e07216 0%, #c55f0b 100%);
+    box-shadow: 0 8px 24px rgba(245, 130, 32, 0.45);
+    transform: translateY(-2px) scale(1.02);
 }
 
 .btn-secondary {
     background-color: transparent;
-    border-color: var(--color-primary);
+    border: 2px solid var(--color-primary);
     color: var(--color-primary);
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-primary);
-    color: var(--color-text-light);
-    box-shadow: 
-        -3px -3px 0px rgba(0, 174, 239, 0.6),
-        3px -3px 0px rgba(236, 0, 140, 0.6),
-        3px 3px 0px rgba(255, 242, 0, 0.6),
-        -3px 3px 0px rgba(20, 70, 140, 0.6);
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    box-shadow: 0 6px 20px rgba(20, 70, 140, 0.08);
     transform: translateY(-2px);
 }
 
 .btn-whatsapp-header {
     background-color: #25d366;
     color: var(--color-text-light);
-    padding: 10px 20px;
+    padding: 10px 22px;
     font-size: 0.9rem;
     box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
 }
 
 .btn-whatsapp-header:hover {
     background-color: #20ba5a;
-    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+    transform: translateY(-2px) scale(1.02);
 }
 
 .btn-block {
@@ -780,14 +775,14 @@ img {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     gap: 32px;
 }
 
 .product-card {
     background-color: var(--color-bg-white);
     border-radius: var(--radius-md);
-    padding: 32px;
+    padding: 24px;
     border: 1px solid var(--color-border);
     box-shadow: var(--shadow-sm);
     display: flex;
