@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </select>
                 </div>
             `;
-        } else if (category === 'Papelaria') {
+        } else if (category === 'Impressos Gráficos' || category === 'Papelaria') {
             htmlContent = `
                 <div class="form-group">
                     <label for="dynamic-paper">Tipo de Papel *</label>
