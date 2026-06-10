@@ -378,4 +378,88 @@ document.addEventListener('DOMContentLoaded', () => {
             window.open(whatsappUrl, '_blank');
         });
     }
+
+    /* ==========================================================================
+       Hero Banner Carousel Logic
+       ========================================================================== */
+    const carouselSlides = document.querySelectorAll('.carousel-slide');
+    const carouselDots = document.querySelectorAll('.carousel-dot');
+    const prevArrow = document.querySelector('.prev-arrow');
+    const nextArrow = document.querySelector('.next-arrow');
+    let currentSlide = 0;
+    let slideInterval;
+    
+    const showSlide = (index) => {
+        if (carouselSlides.length === 0) return;
+        
+        // Remove active class from current slide & dot
+        carouselSlides[currentSlide].classList.remove('active');
+        carouselDots[currentSlide].classList.remove('active');
+        
+        // Update index
+        currentSlide = (index + carouselSlides.length) % carouselSlides.length;
+        
+        // Add active class to new slide & dot
+        carouselSlides[currentSlide].classList.add('active');
+        carouselDots[currentSlide].classList.add('active');
+    };
+    
+    const nextSlide = () => {
+        showSlide(currentSlide + 1);
+    };
+    
+    const prevSlide = () => {
+        showSlide(currentSlide - 1);
+    };
+    
+    const startAutoSlide = () => {
+        stopAutoSlide();
+        slideInterval = setInterval(nextSlide, 6000); // Change banner every 6 seconds
+    };
+    
+    const stopAutoSlide = () => {
+        if (slideInterval) clearInterval(slideInterval);
+    };
+    
+    // Event listeners for arrows
+    if (prevArrow && nextArrow) {
+        prevArrow.addEventListener('click', () => {
+            prevSlide();
+            startAutoSlide(); // Reset timer
+        });
+        nextArrow.addEventListener('click', () => {
+            nextSlide();
+            startAutoSlide(); // Reset timer
+        });
+    }
+    
+    // Event listeners for dots
+    carouselDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            startAutoSlide(); // Reset timer
+        });
+    });
+    
+    // Check if images fail to load to display styled fallbacks
+    const carouselImages = document.querySelectorAll('.carousel-image');
+    carouselImages.forEach(img => {
+        const handleImageError = () => {
+            img.style.display = 'none';
+            const slide = img.closest('.carousel-slide');
+            if (slide) {
+                slide.classList.add('show-fallback');
+            }
+        };
+
+        img.addEventListener('error', handleImageError);
+        
+        // If image has already failed to load before script executed
+        if (img.complete && img.naturalWidth === 0) {
+            handleImageError();
+        }
+    });
+    
+    // Start auto slide on load
+    startAutoSlide();
 });

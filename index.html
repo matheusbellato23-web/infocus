@@ -69,52 +69,77 @@
         <div class="cmyk-header-strip"></div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-overlay"></div>
-        <!-- CMYK Decorative Elements -->
-        <div class="deco-circle circle-cyan" aria-hidden="true"></div>
-        <div class="deco-circle circle-magenta" aria-hidden="true"></div>
-        <div class="deco-circle circle-yellow" aria-hidden="true"></div>
-        <div class="deco-grid-dots" aria-hidden="true"></div>
-        <div class="deco-square-outline" aria-hidden="true"></div>
-        <div class="deco-target target-1" aria-hidden="true"></div>
-        <div class="deco-target target-2" aria-hidden="true"></div>
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <span class="hero-tag">Sua Gráfica de Confiança em São Paulo</span>
-                <h1 class="hero-title">Qualidade Impressa no Seu <span class="highlight">Sucesso</span></h1>
-                <p class="hero-subtitle">Transformamos suas ideias em materiais de comunicação visual e papelaria de altíssimo impacto. Do cartão de visita aos grandes formatos.</p>
-                <div class="hero-btns">
-                    <a href="#produtos" class="btn btn-primary" id="hero-btn-products">Conhecer Produtos</a>
-                    <a href="#orcamento" class="btn btn-secondary" id="hero-btn-quote">Fazer Orçamento Rápido</a>
+    <!-- Hero Section: Banner Carousel -->
+    <section id="home" class="hero-carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <!-- Slide 1 -->
+                <div class="carousel-slide active">
+                    <a href="#orcamento" class="carousel-link" data-slide-index="1">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="img/banners/banner1_mobile.jpg">
+                            <img src="img/banners/banner1_desktop.jpg" alt="Banner Principal 1 - Gráfica In Focus" class="carousel-image">
+                        </picture>
+                        <!-- Fallback Placeholder Content (Visible only if images fail to load or are empty) -->
+                        <div class="carousel-placeholder-fallback">
+                            <div class="placeholder-content">
+                                <span class="placeholder-tag"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Pendente</span>
+                                <h2>Banner Principal 1</h2>
+                                <p>Tamanho Recomendado: Desktop (1920x800) | Mobile (1080x1080)</p>
+                                <span class="btn btn-primary">Fazer Orçamento Rápido</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="hero-trust">
-                    <div class="trust-item"><i class="fa-solid fa-check text-orange"></i> Atendimento Rápido</div>
-                    <div class="trust-item"><i class="fa-solid fa-check text-orange"></i> Equipamentos Modernos</div>
-                    <div class="trust-item"><i class="fa-solid fa-check text-orange"></i> Localização Acessível</div>
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <a href="#orcamento" class="carousel-link" data-slide-index="2">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="img/banners/banner2_mobile.jpg">
+                            <img src="img/banners/banner2_desktop.jpg" alt="Banner Principal 2 - Gráfica In Focus" class="carousel-image">
+                        </picture>
+                        <div class="carousel-placeholder-fallback fallback-orange">
+                            <div class="placeholder-content">
+                                <span class="placeholder-tag"><i class="fa-solid fa-image"></i> Upload Pendente</span>
+                                <h2>Banner Principal 2</h2>
+                                <p>Tamanho Recomendado: Desktop (1920x800) | Mobile (1080x1080)</p>
+                                <span class="btn btn-primary">Ver Todos os Produtos</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-slide">
+                    <a href="#orcamento" class="carousel-link" data-slide-index="3">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="img/banners/banner3_mobile.jpg">
+                            <img src="img/banners/banner3_desktop.jpg" alt="Banner Principal 3 - Gráfica In Focus" class="carousel-image">
+                        </picture>
+                        <div class="carousel-placeholder-fallback fallback-dark">
+                            <div class="placeholder-content">
+                                <span class="placeholder-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Upload Pendente</span>
+                                <h2>Banner Principal 3</h2>
+                                <p>Tamanho Recomendado: Desktop (1920x800) | Mobile (1080x1080)</p>
+                                <span class="btn btn-primary">Solicitar Orçamento Especial</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
-            
-            <div class="hero-visual">
-                <!-- Premium visual representation of print & graphics -->
-                <div class="visual-stack">
-                    <div class="visual-card card-1">
-                        <i class="fa-solid fa-palette visual-icon"></i>
-                        <h4>Design & Arte</h4>
-                        <p>Cores fiéis e precisão de impressão</p>
-                    </div>
-                    <div class="visual-card card-2">
-                        <i class="fa-solid fa-print visual-icon"></i>
-                        <h4>Produção Rápida</h4>
-                        <p>Tecnologia digital e offset avançadas</p>
-                    </div>
-                    <div class="visual-card card-3">
-                        <i class="fa-solid fa-truck-fast visual-icon"></i>
-                        <h4>Entrega Expressa</h4>
-                        <p>Para São Paulo e região metropolitana</p>
-                    </div>
-                </div>
+
+            <!-- Navigation Arrows -->
+            <button class="carousel-arrow prev-arrow" aria-label="Slide anterior">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="carousel-arrow next-arrow" aria-label="Próximo slide">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <!-- Navigation Dots -->
+            <div class="carousel-dots">
+                <span class="carousel-dot active" data-index="0"></span>
+                <span class="carousel-dot" data-index="1"></span>
+                <span class="carousel-dot" data-index="2"></span>
             </div>
         </div>
     </section>
