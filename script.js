@@ -462,4 +462,21 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Start auto slide on load
     startAutoSlide();
+
+    /* ==========================================================================
+       Modern Experience Preloader Lifecycle
+       ========================================================================== */
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        setTimeout(() => {
+            // Start fading out the preloader overlay
+            preloader.classList.add('fade-out');
+            document.body.classList.remove('loading');
+            
+            // Remove the preloader element from DOM after transition completes (600ms)
+            setTimeout(() => {
+                preloader.remove();
+            }, 600);
+        }, 2000); // 2 seconds delay
+    }
 });
