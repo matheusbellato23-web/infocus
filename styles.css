@@ -348,7 +348,7 @@ img {
 .carousel-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 1920 / 800; /* Standard panoramic aspect ratio on desktop */
+    aspect-ratio: 16 / 9; /* Matches client banner images exactly (1024x576 = 16:9) */
 }
 
 .carousel-track {
@@ -386,7 +386,8 @@ img {
 .carousel-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Fills container perfectly — images are exactly 16:9 */
+    object-position: center center;
     display: block;
 }
 
