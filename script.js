@@ -444,7 +444,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check if images fail to load to display styled fallbacks
     const carouselImages = document.querySelectorAll('.carousel-image');
     carouselImages.forEach(img => {
+        const handleImageSuccess = () => {
+            // Image loaded successfully — make sure it's visible and fallback is hidden
+            img.style.display = 'block';
+            const slide = img.closest('.carousel-slide');
+            if (slide) {
+                slide.classList.remove('show-fallback');
+            }
+        };
+
         const handleImageError = () => {
+            // Image genuinely failed to load — hide it and show the fallback
             img.style.display = 'none';
             const slide = img.closest('.carousel-slide');
             if (slide) {
@@ -452,12 +462,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
+        img.addEventListener('load', handleImageSuccess);
         img.addEventListener('error', handleImageError);
-        
-        // If image has already failed to load before script executed
-        if (img.complete && img.naturalWidth === 0) {
-            handleImageError();
+
+        // Check current state only if the browser has already finished loading the image
+        if (img.complete) {
+            if (img.naturalWidth > 0) {
+                handleImageSuccess();
+            } else {
+                // naturalWidth === 0 after complete means it truly failed (e.g. 404)
+                handleImageError();
+            }
         }
+        // If img.complete is false, the load/error event above will handle it
     });
     
     // Start auto slide on load
